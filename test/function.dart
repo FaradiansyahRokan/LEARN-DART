@@ -2,22 +2,25 @@ void main() {
   var invest = tabungan(200000, 100000);
   print(invest);
 
-  // Memanggil fungsi dengan memberikan nilai untuk argumen opsional
+// Untuk Argument Function
   greet("Nadhif");
-
-  // Memanggil fungsi tanpa memberikan nilai untuk argumen opsional
   greet("Farrel", greeting: "Hi", punctuation: "!");
-
-  // Memanggil fungsi dengan memberikan nilai untuk argumen opsional secara eksplisit
   greet("Awan", greeting: "Hey", punctuation: "?");
-
   greet("Atha", greeting: "Woi", punctuation: "!!!!!");
 
   penjumlahan(20, 10);
   pengurangan(20, 10);
+
+// Exception
+  try {
+    divide(10, 0);
+  } catch (e) {
+    print("Terjadi kesalahan: $e");
+  }
+  print("Program tetap berjalan.");
 }
 
-// Fungsi dengan argumen opsional dan nilai default
+// argument function dengan nilai default
 void greet(String name, {String greeting = "Hello", String punctuation = "."}) {
   print("$greeting $name$punctuation");
 }
@@ -34,4 +37,12 @@ penjumlahan(nilaiA, nilaiB) {
 
 pengurangan(kurang1, kurang2) {
   print(kurang1 - kurang2);
+}
+
+// untuk exception
+double divide(int a, int b) {
+  if (b == 0) {
+    throw Exception("Pembagian oleh nol tidak diizinkan.");
+  }
+  return a / b;
 }
