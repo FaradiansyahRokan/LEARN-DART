@@ -29,8 +29,11 @@ void main() {
   print("Nilai y: $y");
   print("List numbers: $numbers");
 
-
   // FINAL
 
-
+  final data;
+  data = 12;
+  // data bisa di inisial kembali namun hanya dapat di lakukan sekali
+  // data = 15;
+  print(data);
 }
