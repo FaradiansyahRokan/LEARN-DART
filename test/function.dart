@@ -3,15 +3,18 @@ void main() {
   print(invest);
 
   // Memanggil fungsi dengan memberikan nilai untuk argumen opsional
-  greet("John");
+  greet("Nadhif");
 
   // Memanggil fungsi tanpa memberikan nilai untuk argumen opsional
-  greet("Jane", greeting: "Hi", punctuation: "!");
+  greet("Farrel", greeting: "Hi", punctuation: "!");
 
   // Memanggil fungsi dengan memberikan nilai untuk argumen opsional secara eksplisit
-  greet("Bob", greeting: "Hey", punctuation: "?");
+  greet("Awan", greeting: "Hey", punctuation: "?");
 
   greet("Atha", greeting: "Woi", punctuation: "!!!!!");
+
+  penjumlahan(20, 10);
+  pengurangan(20, 10);
 }
 
 // Fungsi dengan argumen opsional dan nilai default
@@ -23,4 +26,12 @@ tabungan(porto1, porto2) {
   num totalPortofolio;
   totalPortofolio = porto1 + porto2;
   return totalPortofolio;
+}
+
+penjumlahan(nilaiA, nilaiB) {
+  print(nilaiA + nilaiB);
+}
+
+pengurangan(kurang1, kurang2) {
+  print(kurang1 - kurang2);
 }
