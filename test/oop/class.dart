@@ -8,3 +8,5 @@ void main() {
   var manusia1 = Hewan();
   print(manusia1.berat = "21");
 }
+
+
