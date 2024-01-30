@@ -36,6 +36,8 @@ class Kucing extends Hewan {
   }
 }
 
+
+
 void main() {
   // Membuat objek Anjing
   Anjing anjing = Anjing(nama: "Buddy", umur: 3, ekor: 1);
