@@ -10,25 +10,45 @@ class Hewan {
   }
 }
 
+// class Kucing extends Hewan {
+//   int? kaki;
+
+//   Kucing({String? nama, int? umur, double? berat, this.kaki});
+
+//   ngeong() {
+//     Kucing(nama: "Tao", umur: 1, berat: 4.2, kaki: 12);
+//     print("Nama nya ${nama} , Umurnya ${umur} , berat ${berat} , punya ${kaki} kaki");
+//   }
+// }
+
 class Kucing extends Hewan {
   int? kaki;
 
-  Kucing({this.kaki});
+  Kucing({String? nama, int? umur, double? berat, this.kaki}) : super(nama: nama, umur: umur, berat: berat);
 
-  ngeong() {
-    print("Ngeong");
+  void ngeong() {
+    print("Nama nya $nama, Umurnya $umur, berat $berat, punya $kaki kaki");
+  }
+}
+
+class Anjing extends Hewan {
+  int? ekor;
+
+  Anjing({String? nama, int? umur, double? berat, this.ekor}) : super(nama: nama, umur: umur, berat: berat);
+
+  void desc() {
+    print("Nama nya $nama, Umurnya $umur, berat $berat, punya $ekor ekor");
   }
 }
 
 void main() {
-  var kucing1 = Kucing(kaki: 4);
-  kucing1.nama = "hu";
-  kucing1.berat = 3.4;
-  kucing1.umur = 2;
+  Kucing kucing = Kucing(nama: "Tao", umur: 1, berat: 4.2, kaki: 4);
+  kucing.ngeong();
 
-  kucing1.makan(200);
-  print("Namanya adalah : ${kucing1.nama}");
-  print("Beratnya adalah : ${kucing1.berat}");
-  print("Umurnya adalah : ${kucing1.umur}");
-  print("Kakinya ada : ${kucing1.kaki}");
+  Anjing anjing = Anjing(nama: "Xi", umur: 2, berat: 8.5, ekor: 14);
+  anjing.desc();
 }
+
+
+
+
