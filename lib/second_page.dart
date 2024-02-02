@@ -9,7 +9,6 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   MainAxisAlignment rowAlignment = MainAxisAlignment.start;
-  MainAxisAlignment columnAlignment = MainAxisAlignment.start;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +18,9 @@ class _SecondPageState extends State<SecondPage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+    
             Row(
               mainAxisAlignment: rowAlignment,
               children: [
@@ -28,9 +28,13 @@ class _SecondPageState extends State<SecondPage> {
                   onPressed: () {
                     setState(() {
                       // Ganti posisi pada setiap klik tombol
-                      rowAlignment = (rowAlignment == MainAxisAlignment.start)
-                          ? MainAxisAlignment.center
-                          : MainAxisAlignment.start;
+                      if (rowAlignment == MainAxisAlignment.start) {
+                        rowAlignment = MainAxisAlignment.center;
+                      } else if (rowAlignment == MainAxisAlignment.center) {
+                        rowAlignment = MainAxisAlignment.end;
+                      } else {
+                        rowAlignment = MainAxisAlignment.start;
+                      }
                     });
                   },
                   child: const Text('Pindah Brow'),
