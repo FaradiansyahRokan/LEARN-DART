@@ -9,6 +9,7 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   MainAxisAlignment rowAlignment = MainAxisAlignment.start;
+  MainAxisAlignment colAlignment = MainAxisAlignment.start;
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +19,23 @@ class _SecondPageState extends State<SecondPage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: colAlignment,
           children: [
-    
             Row(
               mainAxisAlignment: rowAlignment,
               children: [
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      // Ganti posisi pada setiap klik tombol
                       if (rowAlignment == MainAxisAlignment.start) {
                         rowAlignment = MainAxisAlignment.center;
+                        colAlignment = MainAxisAlignment.center;
                       } else if (rowAlignment == MainAxisAlignment.center) {
                         rowAlignment = MainAxisAlignment.end;
+                        colAlignment = MainAxisAlignment.end;
                       } else {
                         rowAlignment = MainAxisAlignment.start;
+                        colAlignment = MainAxisAlignment.start;
                       }
                     });
                   },
