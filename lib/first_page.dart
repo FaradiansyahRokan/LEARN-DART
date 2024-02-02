@@ -19,30 +19,31 @@ class _FirstPageState extends State<FirstPage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  [
+          children: [
             const Text("You Have Pushed this Button For"),
             Text("$myNumber"),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:  [
-                ElevatedButton(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton.icon(
                   onPressed: () {
                     setState(() {
                       myNumber = myNumber + 1;
                     });
                   },
-                  child: const Text("Tambah"),
+                  label: const Text("Kurang"),
+                  icon:  const Icon(Icons.add),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      if (myNumber > 0){
-                        myNumber = myNumber - 1;
-                      }
-                    });
-                  },
-                  child: const Text("Kurang"),
-                ),
+                ElevatedButton.icon(
+                  onPressed: myNumber > 0 ? () {
+                  setState(() {
+                     myNumber = myNumber - 1;
+                      });
+                  }: null,
+                  label: const Text("Kurang"),
+                  icon:  const Icon(Icons.remove),
+
+                )
               ],
             )
           ],
