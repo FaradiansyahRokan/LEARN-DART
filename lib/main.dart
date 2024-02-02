@@ -1,3 +1,4 @@
+import 'package:belajar/first_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue, // Background color
       ),
+      home: const FirstPage(),
     );
   }
 }
