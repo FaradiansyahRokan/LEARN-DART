@@ -1,5 +1,7 @@
 import 'package:belajar/first_page.dart';
+import 'package:belajar/last_page.dart';
 import 'package:belajar/main_page.dart';
+import 'package:belajar/replace_page.dart';
 import 'package:belajar/return_data_screen.dart';
 import 'package:belajar/second_page.dart';
 import 'package:belajar/third_page.dart';
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
         '/secondpage' : (context) => const SecondPage() ,// Assuming MainMenu is another page
         '/thirdpage' : (context) =>  ThirdPage(ModalRoute.of(context)?.settings.arguments as String),
         '/return': (context) =>  ReturnDataScreen(),
+        '/rp': (context) =>  const ReplacePage(),
+        '/lp': (context) =>  const LastPage(),
       },
     );
   }
