@@ -50,6 +50,10 @@ class MainPage extends StatelessWidget {
               },
               child: const Text("Buka ReturnDataScreen"),
             ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, "/rp"),
+              child: const Text("Replace Page"),
+            ),
           ],
         ),
       ),
