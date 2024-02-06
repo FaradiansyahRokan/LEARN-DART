@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:belajar/return_data_screen.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+  const MainPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,18 +16,43 @@ class MainPage extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, "/mainmenu"),
-            child: Text("Lanjut"),
-          ),
-          ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, "/secondpage"),
-            child: Text("Lanjut Part 2"),
-          ),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, "/mainmenu"),
+              child: const Text("Lanjut"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, "/secondpage"),
+              child: const Text("Lanjut Part 2"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/thirdpage', arguments: "Data 3"),
+              child: const Text("Lanjut Part 3"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>  ReturnDataScreen(),
+                  ),
+                );
+                if (result != null) {
+                  // ignore: use_build_context_synchronously
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Data Yg Gw Isi Tadi: $result"),
+                    ),
+                  );
+                }
+              },
+              child: const Text("Buka ReturnDataScreen"),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

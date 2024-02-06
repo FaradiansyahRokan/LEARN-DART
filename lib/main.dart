@@ -1,6 +1,8 @@
 import 'package:belajar/first_page.dart';
 import 'package:belajar/main_page.dart';
+import 'package:belajar/return_data_screen.dart';
 import 'package:belajar/second_page.dart';
+import 'package:belajar/third_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +22,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MainPage(), // Assuming MyHomePage is your main page
         '/mainmenu': (context) => const FirstPage(),
-        '/secondpage' : (context) => const SecondPage() // Assuming MainMenu is another page
+        '/secondpage' : (context) => const SecondPage() ,// Assuming MainMenu is another page
+        '/thirdpage' : (context) =>  ThirdPage(ModalRoute.of(context)?.settings.arguments as String),
+        '/return': (context) =>  ReturnDataScreen(),
       },
     );
   }
